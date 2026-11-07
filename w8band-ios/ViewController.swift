@@ -92,6 +92,16 @@ final class ViewController: UIViewController {
                 else {
                     return
                 }
+            let currentWeight = String(format: "%.2f", Double(weight) / 100.0)
+
+            self.setWeightButton.setTitle(
+                "Set weight\n\(currentWeight) kg",
+                for: .normal
+            )
+            self.setWeightButton.titleLabel?.numberOfLines = 2
+            self.setWeightButton.titleLabel?.textAlignment = .center
+            self.setWeightButton.titleLabel?.lineBreakMode = .byWordWrapping
+
             print("sent weight: ", weight)
             self.bluetooth.sendWeightConfig(weight: weight)
             })
