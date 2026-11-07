@@ -12,6 +12,9 @@ enum DeviceStatus: UInt8 {
     case Idle = 0x01
     case Calibrating = 0x02
     case Buffering = 0x03
+    case Bufferring_WaitLiftOff = 0x13
+    case Bufferring_WaitStillness = 0x23
+    case Bufferring_WaitMotion = 0x33
     case Recording = 0x04
     case Processing = 0x05
     case Armed = 0x06
@@ -28,6 +31,12 @@ enum DeviceStatus: UInt8 {
             return "Calibrating"
         case .Buffering:
             return "Buffering"
+        case .Bufferring_WaitLiftOff:
+            return "Buffering - Wait for lift off"
+        case .Bufferring_WaitStillness:
+            return "Buffering - Wait for stillness"
+        case .Bufferring_WaitMotion:
+            return "Buffering - Wait for motion"
         case .Recording:
             return "Recording"
         case .Processing:
